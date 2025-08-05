@@ -1,0 +1,440 @@
+/* global styling base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+
+/* Custom font declarations */
+/* header font */
+@font-face {
+    font-family: 'Header1Font';
+    src: url(Fonts/Transformers\ Movie.ttf) format('truetype');
+}
+
+/* navigation font */
+@font-face {
+    font-family: 'NavMenuFont';
+    src: url(Fonts/Roboto-Regular.ttf) format('truetype');
+}
+
+/* Section Header font */
+@font-face {
+    font-family: 'SectionHeaderFont';
+    src: url(Fonts/Nexa-Heavy.ttf) format('truetype');
+}
+
+/* body text font */
+@font-face {
+    font-family: 'BodyTextFont';
+    src: url(Fonts/Bebas-Regular.ttf) format('truetype');
+}
+
+/* basic styling header and paragraph types */
+h1 {
+    font-family: 'Header1Font', serif;
+    font-size: 2em;
+    background: #008B8B;
+    color: #00FFFF;
+}
+
+h2 {
+    font-family: 'SectionHeaderFont';
+    font-size: 1em;
+}
+
+h3 {
+    font-family: 'SectionHeaderFont';
+    font-size: 1em;
+}
+
+p {
+    font-family: 'BodyTextFont';
+    font-size: 1em;
+}
+
+/* global img settings */
+img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* gradient background on header */
+.PageHeader {
+    background: #014D4D;
+    background: linear-gradient(to bottom, #11FF99 25%, #ff99cc 100%);
+}
+
+.PageHeader nav {
+    margin: 0;
+    top: 0;
+    text-align: center;
+}
+
+/* Navigation button styling */
+.PageHeader nav ul li {
+    align-items: center;
+    list-style-type: none;
+    border-left: #1a1a1a 2px solid;
+    border-right: #1a1a1a 2px solid;
+    border-radius: 0.5em;
+    margin: 0.5em 0;
+    margin-right: 2em;
+}
+
+/* Effect on hovering nav buttons */
+.PageHeader nav ul li:hover {
+    border-left: #00FFFF 2px solid;
+    border-right: #00FFFF 2px solid;
+}
+
+.PageHeader nav ul li button {
+    padding: 1.0em 1.5em;
+    background: none;
+    border: none;
+    color: #1a1a1a;
+}
+
+/* .PageHeader nav ul li:last-child {
+    margin-right: 0;
+} */
+
+#page1btn {
+    font-family: 'NavMenuFont', sans-serif;
+    font-size: 0.75em;
+}
+
+#page2btn {
+    font-family: 'NavMenuFont', sans-serif;
+    font-size: 0.75em;
+}
+
+#page3btn {
+    font-family: 'NavMenuFont', sans-serif;
+    font-size: 0.75em;
+}
+
+body {
+    background: #D3D3D3;
+}
+
+section {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    padding-bottom: 10vh;
+    overflow: visible;
+}
+
+.page {
+    position: relative;
+    padding-bottom: 5vh;
+    border: 1px solid red;
+    overflow: hidden;
+    overflow-y: auto;
+    ;
+    min-height: 60vh;
+    /*prevents ball from visually escaping*/
+}
+
+/* hamburger icon container */
+#hamIcon {
+    display: none;
+    cursor: pointer;
+}
+
+#menuItemsList {
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Initial hamburger bar layout */
+.hamburger {
+    width: 30px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* individual bar styling */
+.bar {
+    display: block;
+    height: 4px;
+    width: 100%;
+    transform: rotate(0deg) translate(0, 0);
+    opacity: 1;
+    background-color: #333;
+    position: relative;
+    transform-origin: center center;
+    transition: transform 0.4s ease;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+/* Opening animation */
+.hamburger.openA .bar:nth-child(1) {
+    animation: topBarAnim 0.4s ease forwards;
+}
+
+.hamburger.openA .bar:nth-child(2) {
+    animation: midBarAnim 0.4s ease forwards;
+}
+
+.hamburger.openA .bar:nth-child(3) {
+    animation: botBarAnim 0.4s ease forwards;
+}
+
+/* Closing animation */
+.hamburger.closeA .bar:nth-child(1) {
+    animation: topBarAnim 0.4s ease reverse forwards;
+}
+
+.hamburger.closeA .bar:nth-child(2) {
+    animation: midBarAnim 0.4s ease reverse forwards;
+}
+
+.hamburger.closeA .bar:nth-child(3) {
+    animation: botBarAnim 0.4s ease reverse forwards;
+}
+
+/* Hamburger menu to X animations */
+@keyframes topBarAnim {
+    0% {
+        transform: rotate(0);
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+}
+
+@keyframes midBarAnim {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes botBarAnim {
+    0% {
+        transform: rotate(0);
+        top: 0;
+        left: 0;
+    }
+
+    100% {
+        transform: rotate(-45deg);
+        top: -10px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    /* Show hamburger icon */
+    #hamIcon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    /* Hide menu items by default */
+    nav ul {
+        display: none;
+        transform: translateY(0);
+        opacity: 0;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    /* Show menu when toggled */
+    nav ul.menuShow {
+        display: flex;
+        animation: slideDownMenu 0.4s ease forwards;
+    }
+
+    /* Stack menu items vertically */
+    nav ul li {
+        display: block;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 801px) {
+    #hamIcon {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@keyframes slideDownMenu {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* minigame area container */
+#container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: 30vh;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+}
+
+#backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* css sprite sheet robot  */
+#robot {
+    width: 110px;
+    height: 100px;
+    background-image: url('Images/spot-exploer-sprite-sheet.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 20vw;
+    max-height: 20vh;
+}
+
+/* Right-facing robot */
+.robot-right {
+    background-position: 0px 0px;
+}
+
+/* Left-facing robot */
+.robot-left {
+    background-position: -110px 0px;
+}
+
+.robot-reset {
+    transition: left 0.5s ease, top 0.5s ease;
+}
+
+#Waypoint {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    max-width: 20vw;
+    max-height: 20vh;
+}
+
+#page1 button {
+    margin: 0.5em;
+    padding: 0.8em 1.2em;
+    font-size: 1em;
+}
+
+/* quiz question layout */
+.quiz-question {
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.quiz-question label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* bolding for quiz questions */
+.question-label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+footer {
+    position: relative;
+    z-index: 1;
+    background: #eee;
+    padding: 1em;
+    text-align: center;
+}
+
+
+@media (max-width:800px) {
+
+    /*at mobile size*/
+
+    /*hide QR code */
+    #qrCodeImg {
+        display: none;
+    }
+
+
+
+    #page1 button {
+        display: -block;
+        width: auto;
+        margin: 0.5em;
+        font-size: 1em;
+    }
+
+    #container {
+        height: auto;
+        min-height: 25vh;
+    }
+
+    #backgroundImage {
+        object-fit: cover;
+    }
+
+    #robot {
+        max-width: 25vw;
+        max-height: 25vh;
+    }
+
+}
