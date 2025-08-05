@@ -7,8 +7,18 @@
     "theme_color": "#00FF00",
     "icons": [
         {
-            "src": "Cartoon-Robot-Image.webp",
+            "src": "Images/Cartoon-Robot-Image.webp",
             "sizes": "64x64",
+            "type": "image/webp"
+        },
+        {
+            "src": "Images/Cartoon-Robot-Image.webp",
+            "sizes": "192x192",
+            "type": "image/webp"
+        },
+          {
+            "src": "Images/Cartoon-Robot-Image.webp",
+            "sizes": "512x512",
             "type": "image/webp"
         }
     ]

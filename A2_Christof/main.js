@@ -67,19 +67,17 @@ const rightBtn = document.querySelector("#rightBtn");
 const upBtn = document.querySelector("#upBtn");
 const downBtn = document.querySelector("#downBtn");
 const resetBtn = document.querySelector("#resetBtn");
-const container = document.querySelector("#container");
+
 
 var score = 0;
 const scoreBox = document.getElementById("scoreBox");
 const collectAudio = new Audio("Audio/success-1.mp3");
-let timerLeft = 30;
+let timeLeft = 30;
 let timerInterval;
 let gameActive = false;
 
-var robotX = robotY = 0; //assign initial position of robot
-
-// Calculate one half of the screen
-const onehalfY = window.innerHeight / 2;
+var robotX = 0; //assign initial position of robot
+var robotY = 0;
 
 // Reset robot position and game state
 function ResetPos() {
@@ -213,13 +211,15 @@ function checkCollision() {
     if (!gameActive || currentPage !== "game") return;
     // skips collision if too short a time since last collision
     if (collisionCooldown) return;
-
+    
+    const robot = document.getElementById("robot");
     const robotObj = document.getElementById("robot");
     const waypointObj = document.getElementById("Waypoint");
 
     if (robotObj && waypointObj) {
         const robotRect = robotObj.getBoundingClientRect();
         const waypointRect = waypointObj.getBoundingClientRect();
+        
 
         if (checkOverlap(robotRect, waypointRect)) {
             console.log("Collision detected!");
@@ -245,7 +245,7 @@ function checkCollision() {
         checkGameEnd();
     }
 
-};
+}
 
 // Check rectangle overlap
 function checkOverlap(rect1, rect2) {
