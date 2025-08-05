@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All about robots</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
+
+    <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+    <!-- page header with site title and navmenu -->
+    <div class="PageHeader">
+        <header>
+            <h1>All About Robots</h1>
+        </header>
+        <!-- Hamburger menu (converts to X) for mobile -->
+        <div id="hamIcon" class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav> <!--menu system-->
+            <ul id="menuItemsList">
+                <li><button id="page1btn">Different types of robots</button></li>
+                <li><button id="page2btn">Uses of robots in everyday life</button></li>
+                <li><button id="page3btn">How robots function and interact with the world</button></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- main content container -->
+    <main id="pagecontainer">
+        <!-- Different types of robots page -->
+        <section class="page" id="page1">
+            <h2>Different types of robots</h2>
+            <p>Different types of robots are used for different purposes.</p>
+            <h3>Production Robots</h3>
+            <p>Industrial or Factory robots, such as SCARA robots or articulated arm robots, are robots designed for
+                precision, speed and endurance in controlled and repetitive settings like assembly lines<br>
+                they are designed to carry out factory tasks efficiently and many times over.</p>
+            <h3>Military Robots</h3>
+            <p>Military and Defense robots, such as Unmanned Aerial Vehicles or Autonomous Combat robots, are robots
+                that specialize in various needs for ruggedness, autonomy, stealth or firepower.<br>
+                These robots can negate the need for humans in risky places in combat scenarios or enhance human
+                capabilities in battle </p>
+            <img src="Images/MilitaryRobot.jpg" alt="Image of a military robot" width="300">
+            <h3>Commercial robots</h3>
+            <p>Household and Personal robots, such as robot vacuum cleaners or social robots, are robots designed to be
+                consumer friendly, with emphasis on safety and and usability<br>
+                These robots serve more commercial functions such as helping with household chores or simulating human
+                interactions.
+            </p>
+            <!-- Robot move to waypoint minigame -->
+            <h3 id="instructionText">Use the input controls or WASD keys to guide the spot-explorer robot to the
+                Waypoint!<br>
+                Reach a score of 15 within the time limit!</h3>
+            <button id="leftBtn">Left</button>
+            <button id="rightBtn">Right</button>
+            <button id="upBtn">Up</button>
+            <button id="downBtn">Down</button>
+            <button id="resetBtn">Reset</button>
+            <p id="scoreBox">Score: 0</p>
+            <p id="timerDisplay">Time Left: 30s</p>
+            <p id="gameResult"></p>
+            <div id="container">
+                <img id="backgroundImage" src="Images/DesertBackgroundImage.webp" alt="DesertBackground">
+                <div id="robot"></div>
+                <img id="Waypoint" src="Images/Orange+Dropped+Pin.png" width="100" alt="Waypoint Image"
+                    title="Orange Waypoint" />
+            </div>
+
+        </section>
+        <!-- robots in daily life page -->
+        <section class="page" id="page2">
+            <h2>Uses of robots in everyday life</h2>
+            <h3>Robots at home</h3>
+            <p>Robots used at home are used as either Service or Social robots. They perform functions such as taking
+                over mumdane household chores like vacuum cleaning or mopping,<br>
+                or can serve as entertainment or teaching assistants such as toy moving robots or talking robots</p>
+            <h3>Robots in restaurants</h3>
+            <p>Robots can also serve in places like restaurants as service robots. These robots can carry out tasks such
+                as serving food or cooking.<br>
+                These robots improve the restaurants by reducing waiting time and taking over tasks that are more
+                mundane such as cleaning dishes</p>
+            <img src="Images/Robot-In-Restaurant.png" alt="Image of a restaurant robot" width="300">
+            <h3>Robots in themeparks</h3>
+            <p>Robots are also used in places such as themeparks as entertainment robots. entertainment robots are
+                usually aesthetically pleasing and colourful.<br>
+                These robots are built to provide fun and entertainment, for example by simulating various fictional
+                characters and their movements</p>
+            <h3>Robots in Hospitals</h3>
+            <p>Robots are now also used in healthcare and medical situations. These robots can be used to assist
+                surgeons in making precise or complicated surgical operations. these robots can help avoid mistakes and
+                unnecessary scars in surgery. <br>
+                can also serve to help those with need for medical assistance, such as reminder robots for those with
+                important medicines.</p>
+            <img src="Images/MedicalRobot.webp" alt="Image of a medical robot" width="300">
+        </section>
+        <!-- robot functionality and interaction page -->
+        <section class="page" id="page3">
+            <h2>How robots function and interact with the world</h2>
+            <h3>How a robot operates</h3>
+            <p>Robots that don't use remote controls are operated by computer programmes. A Computer in the robot acts
+                as the equivalent of a human brain, taking inputs to perform actions from its program and sending them
+                to
+                its parts. <br>
+                Similar to how the human brain sends signals through nerves to muscles, the computer program sends
+                signals through the wires of a robot to the robots actuators such as robot motors to command them to
+                rotate, making the robot move.<br>
+                Conversely, when a program sends an input to stop, similar to a human brain deciding to stop, the
+                computer sends signals through the wires to the actuators to command them to stop.</p>
+            <h3>Senses of a robot</h3>
+            <p>Robots can also simulate various human senses using different sensors to perceive the world around them,
+                influencing their program's actions.<br>
+                Some examples of such sensors are Visions Cameras that simulate eyesight by capturing images and video
+                to allow for object recognition and navigation, microphones to simulate hearing by recieving sound waves
+                for voice recognition, and tactile sensors to measure pressure, detect contact, or detect applied force.
+            </p>
+            <img src="Images/Human-RobotSensorComparison.jpg" alt="Visual demonstration of a human senses on a robot"
+                width="400">
+            <!-- Quiz on robot sensors and operation-->
+            <h2>Robot Sensors Quiz</h2>
+
+            <fieldset>
+                <legend>1. Which sensor helps a robot detect obstacles?</legend>
+                <input type="radio" name="q1" value="Ultrasonic"> Ultrasonic
+                <input type="radio" name="q1" value="Camera"> Camera
+                <input type="radio" name="q1" value="Microphone"> Microphone
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Which human sense is most similar to a robot's microphone?</legend>
+                <input type="radio" name="q2" value="Sight"> Sight
+                <input type="radio" name="q2" value="Hearing"> Hearing
+                <input type="radio" name="q2" value="Touch"> Touch
+            </fieldset>
+
+            <fieldset>
+                <legend>3. What sensor would a robot use to detect temperature?</legend>
+                <input type="radio" name="q3" value="Thermal Sensor"> Thermal Sensor
+                <input type="radio" name="q3" value="Infrared Sensor"> Infrared Sensor
+                <input type="radio" name="q3" value="Pressure Sensor"> Pressure Sensor
+            </fieldset>
+
+            <div class="quiz-question">
+                <label for="q4">Q4: What is the term for a robot's ability to adjust its actions based on feedback from
+                    its
+                    environment?</label>
+                <input type="text" name="q4" id="q4">
+            </div>
+
+            <div class="quiz-question">
+                <label for="q5">Q5: Select the system that enables robots to understand human speech:</label>
+                <select name="q5" id="q5">
+                    <option value="">--Choose an option--</option>
+                    <option value="Speech Recognition">Speech Recognition</option>
+                    <option value="Motion Detection">Motion Detection</option>
+                    <option value="Thermal Imaging">Thermal Imaging</option>
+                </select>
+            </div>
+
+            <div class="quiz-question">
+                <label class="question-label">Q6: Select all capabilities that help robots interact with
+                    humans:</label><br>
+                <label><input type="checkbox" name="q6" value="Speech Recognition"> Speech Recognition</label>
+                <label><input type="checkbox" name="q6" value="Facial Recognition"> Facial Recognition</label>
+                <label><input type="checkbox" name="q6" value="GPS"> GPS</label>
+                <label><input type="checkbox" name="q6" value="Gesture Detection"> Gesture Detection</label>
+            </div>
+
+            <button id="btnSubmit">Submit Quiz</button>
+            <h3 id="quizScoreBox">Not submitted</h3>
+
+        </section>
+    </main>
+</body>
+<footer>
+    <!-- Displays  the width and height of the webpage -->
+    <p>Window inner width: <span id="width"></span></p>
+    <p>Window inner height: <span id="height"></span></p>
+    <!-- QR code for the github release of the webpage(hidden on mobile) -->
+    <img id="qrCodeImg" src="Images/qrcode_christof-leow.github.io.png" alt="QR code for webpage">
+</footer>
+
+</html>
